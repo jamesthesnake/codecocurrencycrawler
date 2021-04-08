@@ -22,18 +22,6 @@ class HyperlinkParser(HTMLParser):
         if tag == "a" and "href" in attrs:
             self.hyperlinks.append(attrs["href"])
 
-# Links from `get_hyperlinks(url)` can be of two possible forms:
-
-#   Full URL e.g. "https://www.openai.com/progress/"
-#   Partial URL e.g. "/progress/" or "progress"
-
-# Full URLs will always begin with "http:", "https:", or "mailto:"
-# Partial URLs:
-#    If they begin with "/" they should be prefixed with the root URL passed to `crawl()`
-#    If they begin with "#", they should be discarded
-#    Otherwise, they should be prefixed with the url that was passed to `get_hyperlinks()`
-   
-# Feel free to use any documentation for the language you choose while solving this problem.
 
 def get_hyperlinks(url):
     """
